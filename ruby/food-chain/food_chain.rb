@@ -1,15 +1,16 @@
 class FoodChainSong
 	def initialize
 		@food_chain_animals = ["fly","spider","bird","cat","dog","goat","cow","horse"]
-		@song = ""
 	end
 	def sing
+		@song = ""
 		1.upto(8) do |i|
 			@song << verse(i) + "\n"
 		end
 		return @song
 	end
 	def verses(verse_init,verse_ending)
+		@song = ""
 		for i in verse_init..verse_ending
 			@song << verse(i) + "\n"
 		end
