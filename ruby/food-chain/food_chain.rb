@@ -11,7 +11,7 @@ class FoodChainSong
 	end
 	def verses(verse_init,verse_ending)
 		@song = ""
-		for i in verse_init..verse_ending
+		(verse_init..verse_ending).each do |i|
 			@song << verse(i) + "\n"
 		end
 		return @song
@@ -27,25 +27,25 @@ class FoodChainSong
 	end
 	def verse(versenumber) 
 		string_verse = "I know an old lady who swallowed a #{@food_chain_animals[versenumber-1]}.\n"
-		current_verse = case versenumber
-		when 1 then
+		case versenumber
+		when 1 
 			#nothing
-		when 2 then
+		when 2 
 			string_verse << "It wriggled and jiggled and tickled inside her.\n" 
-      	when 3 then
+      	when 3 
       		string_verse << "How absurd to swallow a bird!\n" 
-      	when 4 then
+      	when 4 
       		string_verse << "Imagine that, to swallow a cat!\n" 
-      	when 5 then
+      	when 5 
       		string_verse <<   "What a hog, to swallow a dog!\n" 
-      	when 6 then
+      	when 6 
       		 string_verse << "Just opened her throat and swallowed a goat!\n" 
-      	when 7 then
+      	when 7 
       		string_verse << "I don't know how she swallowed a cow!\n" 
-		when 8 then
+		when 8 
 			string_verse << "She's dead, of course!\n"
 		end
-		if versenumber != 8 then
+		if versenumber != 8 
 			string_verse << swallow_chain(versenumber-1) if versenumber != 1
 			string_verse << "I don't know why she swallowed the fly. Perhaps she'll die.\n" 
 		end
